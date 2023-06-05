@@ -62,5 +62,5 @@ https://github.com/7h4nd5RG0d/DES/blob/main/DES.py
 
 ### References for images:
 > 1)https://www.researchgate.net/figure/Illustration-of-a-round-in-a-Feistel-network_fig1_224645711
-> 2)https://www.researchgate.net/figure/Function-f-of-DES-5_fig2_309634531
+> 2)https://www.researchgate.net/figure/Function-f-of-DES-5_fig2_309634531 
 > 3)https://www.researchgate.net/figure/Function-S-box-S1-in-the-DES-algorithm-represented-as-a-table-and-its-work-on-the_fig7_220440933
