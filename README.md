@@ -38,6 +38,9 @@ It is based on **FIESTAL NETWORKS**
 >- To each block we add the last bit of the previous block to the start and the first bit of the next block to the end to make it a total of 6 buts in each block
 >- The total length will be 48 bits.
 
+# The S-boxes:
+![image](https://github.com/7h4nd5RG0d/DES/assets/128285431/e2f6d250-7fd9-4356-b952-efdf3ce9bdaf)
+>- There are 8 S-boxes used in each round for each block.
 # Steps involved in DES:
 >- Take the plaintext and divide it into 64-bit blocks. If the last block does not have 64 bits use a padding scheme to convert it into 64 bits.
 >- **NOTE: DES is a BLOCK CIPHER**
@@ -47,6 +50,7 @@ It is based on **FIESTAL NETWORKS**
 
 
 # Python code:
+https://github.com/7h4nd5RG0d/DES/blob/main/DES.py
 >- 1)The padding scheme:- If the last block is not 64  bits 0's are appended to make it 64-bit
 >- 2)The s-boxes used in a round are the same. In practice the 8 S-boxes are different 
 >- 3)PC-1:- Takes 64-bit input and gives 56-bit output by removing the last bit of each 8 bit-block
@@ -59,3 +63,4 @@ It is based on **FIESTAL NETWORKS**
 ### References for images:
 > 1)https://www.researchgate.net/figure/Illustration-of-a-round-in-a-Feistel-network_fig1_224645711
 > 2)https://www.researchgate.net/figure/Function-f-of-DES-5_fig2_309634531
+> 3)https://www.researchgate.net/figure/Function-S-box-S1-in-the-DES-algorithm-represented-as-a-table-and-its-work-on-the_fig7_220440933
