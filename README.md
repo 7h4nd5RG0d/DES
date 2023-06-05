@@ -23,7 +23,8 @@ It is based on **FIESTAL NETWORKS**
 >- The right half R is the left half for the next round
 >- The right half is then passed through the **'f' function** along with the round key and then XOR'd with the left half. The final output is the right half for the next round.
 
-# The f function:
+# The 'f' function:
+![image](https://github.com/7h4nd5RG0d/DES/assets/128285431/78772c36-097b-4d1f-9e22-02eec13b6493)
 >- The right half is passed through an expansion box.
 >- The output is XOR'd with the round key
 >- The 48-bit output is then split into 8 blocks of 6 bits each and each block is passed through an S-box.
@@ -31,8 +32,30 @@ It is based on **FIESTAL NETWORKS**
 >- The 32-bit output from the S-box is passed through a permutation box and finally we get the 32-bit resultant string.
 >- NOTE: The S-box is a compression function as it takes a 6-bit input and gives a 4-bit output
 
+# The Expansion box:
+>- The input to the expansion box is 32-bit in length.
+>- It is split into 8 blocks of 4 bits each.
+>- To each block we add the last bit of the previous block to the start and the first bit of the next block to the end to make it a total of 6 buts in each block
+>- The total length will be 48 bits.
+
+# Steps involved in DES:
+>- Take the plaintext and divide it into 64-bit blocks. If the last block does not have 64 bits use a padding scheme to convert it into 64 bits.
+>- **NOTE: DES is a BLOCK CIPHER**
+>- Pass the plaintext into an initial permutation.
+>- This output is passed through 16 rounds of the fiestal network
+>- The output is then passed through an inverse permutation to get the final ciphertext of the block
+
+
+# Python code:
+>- 1)The padding scheme:- If the last block is not 64  bits 0's are appended to make it 64-bit
+>- 2)The s-boxes used in a round are the same. In practice the 8 S-boxes are different 
+>- 3)PC-1:- Takes 64-bit input and gives 56-bit output by removing the last bit of each 8 bit-block
+>- 4)PC-2:- Takes 56-bit input and gives 48-bit output by removing the last bit of each 7-bit block.
+
+
 # Output:
 ![image](https://github.com/7h4nd5RG0d/DES/assets/128285431/40f123cd-937b-4c17-b8e0-26a9e775a7c9)
 
 ### References for images:
 > 1)https://www.researchgate.net/figure/Illustration-of-a-round-in-a-Feistel-network_fig1_224645711
+> 2)https://www.researchgate.net/figure/Function-f-of-DES-5_fig2_309634531
