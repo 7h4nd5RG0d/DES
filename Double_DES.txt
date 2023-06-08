@@ -1,0 +1,24 @@
+When using DES we have a key length of 56 bits.
+This gives us a security of 2^56 bits, which is not safe as today we have supercomputer networks with the computing power of 2^64.
+
+So the next thing to try out was to increase the key size by using DES 2 times.
+This gives a total of 112 bits as key length.
+BUT IS IT SAFE???
+1) Well the answer can be decided based on the security provided.
+2) A brute force approach takes 2^112 computation power which is good.
+3) But what if we consider this: Instead of encrypting twice we encrypt our plaintext once using all possible keys( i.e 2^56 computation power) and then decrypt the final ciphertext using all keys(since as an attacker we know what type of decryption algo is being used) that we receive and store these both in separate databases. Now just observe that whenever we get a collision in these 2 databases we indirectly have found our 112-bit key.
+4) This means that we have found the keys in just 2^57 computations. (2^56 *2 since we do decryption of ciphertext using all keys as well as encryption of plaintext using all keys).
+5) The only limitation as an attacker is having a large database as we have 2 store all the possible encryptions of our plaintext using all the possible keys so that we can compare them with our decryption of ciphertext to find a collision.
+
+An example of a 2DES attack is given here:
+https://play.picoctf.org/practice/challenge/140?category=2&page=3
+
+
+The steps involved in the attack are :
+ 1)Let us assume a chosen plaintext attack.
+ 2)So first let's encrypt a string "a" and get its ciphertext from the machine.
+ 3)Next we encrypt "a" using all possible keys and store them in a database.
+ 4)The last step will be to decrypt the ciphertext using all possible keys until we find a hit in the database. 
+ 5)We store both the keys that lead to the collision and these are the resultant keys.
+ 
+ 
